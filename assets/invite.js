@@ -57,8 +57,10 @@
   /* 지도 열기: 설치된 앱이 있으면 앱으로, 없으면 웹 지도로 */
   var VENUE = "메종 드 아나하";
   var LAT = "37.5042815", LNG = "127.0415425";
-  var NAVER_WEB = "https://map.naver.com/p/search/" + encodeURIComponent(VENUE + " 언주로 517");
-  var KAKAO_WEB = "https://map.kakao.com/link/map/" + encodeURIComponent(VENUE) + "," + LAT + "," + LNG;
+  /* 검색어 형태만 장소를 찾아낸다. 데스크톱은 정식 페이지, 모바일은 모바일 검색. */
+  var NAVER_Q = encodeURIComponent(VENUE + " 언주로 517");
+  var NAVER_WEB_M = "https://m.map.naver.com/search2/search.naver?query=" + NAVER_Q;
+  var NAVER_WEB_D = "https://map.naver.com/p/search/" + NAVER_Q;
 
   var mapBtn = document.getElementById("open-map");
   if (mapBtn){
@@ -66,11 +68,12 @@
       var ua = navigator.userAgent;
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
       var isAndroid = /Android/i.test(ua);
+      var isMobile = isIOS || isAndroid;
       var left = false;
 
-      function goWeb(){ if (!left){ left = true; window.open(NAVER_WEB, "_blank", "noopener"); } }
+      function goWeb(){ if (!left){ left = true; window.open(isMobile ? NAVER_WEB_M : NAVER_WEB_D, "_blank", "noopener"); } }
 
-      if (!isIOS && !isAndroid){ goWeb(); return; }
+      if (!isMobile){ goWeb(); return; }
 
       /* leaving the page = the app took over; staying = fall back to the next target */
       function onHide(){ if (document.hidden) left = true; }
@@ -82,24 +85,18 @@
         window.removeEventListener("pagehide", onHide);
       }
 
-      /* 네이버지도 app first */
-      var naverApp = "nmap://place?lat=" + LAT + "&lng=" + LNG
-                   + "&name=" + encodeURIComponent(VENUE) + "&appname=jungtakandmoonhyun.com";
+      /* 네이버지도 앱을 시도하고, 없으면 네이버 웹으로 간다.
+         카카오로 넘기지 않는다 — 버튼 라벨이 네이버인데 카카오가 열리면
+         하객은 잘못 눌렀다고 생각한다. 카카오는 옆 링크로 따로 있다. */
+      /* nmap://place 는 place id 를 요구한다. 좌표+이름은 search 로 넘긴다. */
+      var naverApp = "nmap://search?query=" + encodeURIComponent(VENUE)
+                   + "&appname=jungtakandmoonhyun.com";
       location.href = naverApp;
 
       setTimeout(function(){
-        if (left){ cleanup(); return; }
-        /* 네이버 app absent -> try 카카오 app */
-        var kakaoApp = isIOS
-          ? "kakaomap://look?p=" + LAT + "," + LNG
-          : "kakaomap://open?p=" + LAT + "," + LNG + "&n=" + encodeURIComponent(VENUE);
-        location.href = kakaoApp;
-
-        setTimeout(function(){
-          cleanup();
-          if (!left) location.href = NAVER_WEB;
-        }, 750);
-      }, 750);
+        cleanup();
+        if (!left) location.href = NAVER_WEB_M;
+      }, 900);
     });
   }
 
