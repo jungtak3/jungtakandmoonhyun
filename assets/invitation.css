@@ -340,8 +340,12 @@
 }
 
 /* English names are longer and must not split across lines */
+/* The full names must hold one line at 320px: "Jung Tak Joo ♥ Moon Hyun Chang"
+   measures ~17.6em wide, so the size is driven by the viewport, not a fixed ramp. */
 [lang="en"] .names{
-  font-size:clamp(1.16rem,5.1vw,1.44rem);
+  font-size:clamp(.9rem,4.72vw,1.2rem);
   line-height:1.5;
+  white-space:nowrap;
 }
+[lang="en"] .names .heart{margin:0 .3em}
 [lang="en"] .names .part{white-space:nowrap}
