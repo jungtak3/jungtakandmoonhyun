@@ -53,11 +53,11 @@ Constraints:
 - No server and no build step: anything interactive must run client-side or use a third-party endpoint the couple operates.
 - No backend exists and none will be added. RSVP is a handoff: the guest's own messaging app or a third-party form the couple operates. Never a localStorage write, and never a button that claims to have sent something.
 - Guest names, photos, personal accounts, and phone numbers are real personal data; nothing may be fabricated to fill a layout.
-- Korean is the primary language; the couple's names appear as **주정탁** and **장문현**, romanised as **Joo Jungtak** and **Jang Moonhyun**.
+- Korean is the primary language; the page carries no English prose. The couple's names appear as **주정탁** and **장문현**, and the closing mark is **JT ♥ MH**.
 
 ## Brand Commitments
 
-- Names: 주정탁 (Joo Jungtak) and 장문현 (Jang Moonhyun). Monogram form `JT ♥ MH` is established and used by the couple.
+- Names: 주정탁 and 장문현. The page and the closing signature use the monogram **`JT ♥ MH`**; romanisation (Joo Jungtak / Jang Moonhyun) is secondary and appears only where Latin is required, not on the page.
 - Palette in use: cream ground `#fdfaf6`, plum `#3a2630`, body `#5c4a53`, muted `#6b5a62`, rose `#8f5d6a` (AA-safe; the earlier `#b07c88` failed at 3.3:1).
 - Type in use: **LINE Seed Sans KR** (Regular 400 / Bold 700), self-hosted as a woff2 subset.
 - The heart-shaped QR is a real, working asset and is part of the identity; the couple asked for it in the first place. It is **not referenced by the current page** — it exists for print.
