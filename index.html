@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>정탁 · 문현 — 2027년 3월 1일</title>
 <meta name="description" content="정탁과 문현이 결혼합니다. 2027년 3월 1일 월요일 낮 12시 30분, 메종 드 아나하.">
-<meta name="theme-color" content="#221a1e">
+<meta name="theme-color" content="#fdfaf6">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/GowunBatang-Regular.woff2">
 <style>
   @font-face{
@@ -16,291 +16,270 @@
   }
 
   :root{
-    --plum:#221a1e;
-    --paper:#fbfaf7;
-    --ink:#241c20;
-    --muted:#6b5f63;
-    --rule:#ded7d1;
-    --wax:#a83a24;
-    --wax-lit:#c4442c;
-    --paper-warm:#fffdfa;
-    --sans:"Helvetica Neue",Arial,sans-serif;
+    --cream:#fdfaf6;
+    --plum:#3a2630;
+    --body:#5c4a53;
+    --muted:#6b5a62;
+    --rose:#8f5d6a;
+    --rule:#eadfda;
     --serif:"Gowun Batang","Nanum Myeongjo","Noto Serif KR",Georgia,serif;
-    --sheet-max:640px;
-    --edge:clamp(20px,5.5vw,40px);
   }
 
   *,*::before,*::after{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
     margin:0;
-    background:var(--plum);
-    color:var(--ink);
+    background:var(--cream);
+    color:var(--plum);
     font-family:var(--serif);
     font-size:16px;
-    line-height:1.85;word-break:keep-all;
+    line-height:1.9;
+    letter-spacing:.01em;
+    word-break:keep-all;
+    overflow-wrap:anywhere;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
-  ::selection{background:var(--wax);color:var(--paper)}
-  :focus-visible{outline:2px solid var(--wax-lit);outline-offset:3px;border-radius:1px}
+  ::selection{background:#f0dfe3;color:var(--plum)}
+  :focus-visible{outline:2px solid var(--rose);outline-offset:3px}
 
-  /* ---------- the envelope: flap folded back behind the sheet ---------- */
-  .envelope{
-    position:relative;
-    padding:clamp(34px,7vw,96px) 0 0;
-    background:
-      radial-gradient(120% 60% at 50% 0%, #2d2328 0%, var(--plum) 58%);
-  }
-  .flap{
-    display:block;
-    /* the envelope is only as wide as the sheet it holds, plus its seam */
-    width:min(100%,calc(var(--sheet-max) + 2 * var(--edge) + 2px));
-    max-width:var(--sheet-max);
+  .page{
+    max-width:460px;
     margin:0 auto;
-    color:#6d5760;
+    padding:clamp(52px,13vw,86px) clamp(22px,6vw,32px) clamp(48px,10vw,72px);
+    text-align:center;
   }
-  .flap line,.flap path{vector-effect:non-scaling-stroke}
-  .flap .crease{stroke:currentColor;stroke-width:1}
-  .flap .seam{stroke:#54424a;stroke-width:1;stroke-dasharray:1 6}
-
-  /* ---------- the sheet that rose out of it ---------- */
-  .sheet{
-    position:relative;
-    max-width:var(--sheet-max);
-    margin:clamp(-14px,-2vw,-6px) auto 0;
-    padding:clamp(34px,7vw,62px) var(--edge) clamp(40px,8vw,70px);
-    background:
-      linear-gradient(180deg,var(--paper-warm),var(--paper) 26%);
-    box-shadow:
-      0 1px 0 rgba(255,255,255,.5) inset,
-      0 -22px 44px -30px rgba(255,225,205,.34) inset,
-      0 26px 60px -34px rgba(0,0,0,.72);
-    border-radius:1px;
-  }
-  /* the printed lattice on the sheet's top edge */
-  .lattice{
-    display:flex;gap:0;margin:0 0 clamp(22px,4.5vw,34px);
-    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  }
-  .lattice i{flex:1;height:6px;border-right:1px solid var(--rule)}
-  .lattice i:last-child{border-right:0}
-  .lattice i.on{background:var(--wax)}
 
   /* ---------- masthead ---------- */
   .names{
-    margin:clamp(16px,3vw,24px) 0 0;
-    display:flex;align-items:center;justify-content:center;
-    gap:clamp(10px,3.4vw,24px);
-    font-size:clamp(2.1rem,9.2vw,3.3rem);
-    line-height:1.16;letter-spacing:.02em;font-weight:400;
-    color:var(--ink);
+    margin:0;
+    font-size:clamp(1.9rem,8.4vw,2.35rem);
+    font-weight:400;
+    line-height:1.3;
+    letter-spacing:.12em;
   }
-  .seal{
-    flex:0 0 auto;width:clamp(30px,7.6vw,42px);height:auto;
-    color:var(--wax);margin-top:.06em;
-  }
-  .seal .crack{stroke:var(--paper);stroke-width:1.15}
-
-  .opening{
-    margin:clamp(20px,4vw,30px) 0 0;
-    font-size:.95rem;line-height:2.05;color:#3c3136;
-    text-wrap:pretty;word-break:keep-all;
+  .names .heart{
+    display:inline-block;
+    color:var(--rose);
+    font-size:.56em;
+    vertical-align:.14em;
+    margin:0 .28em;
   }
 
-  .dateline{
-    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
-    gap:clamp(10px,3vw,20px);
-    margin:clamp(26px,5vw,38px) 0 0;
-    padding-top:clamp(20px,4vw,28px);
-    border-top:1px solid var(--rule);
-  }
-  .dateline .side{font-family:var(--sans);font-size:.6875rem;letter-spacing:.24em;
-    color:var(--muted);text-transform:uppercase}
-  .dateline .side:last-child{text-align:right}
-  .stamp{
+  .when{
+    margin:clamp(18px,4vw,24px) 0 0;
+    font-size:.95rem;
+    letter-spacing:.1em;
+    color:var(--body);
     font-variant-numeric:tabular-nums;
-    font-size:clamp(1.32rem,5.4vw,1.72rem);
-    letter-spacing:.06em;white-space:nowrap;color:var(--ink);
   }
-  .stamp b{font-weight:400;color:var(--wax)}
-  .understamp{
-    margin:.5rem 0 0;font-family:var(--sans);
-    font-size:.75rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;
+  .when .row{display:block;white-space:nowrap}
+  .when .row + .row{margin-top:.35em}
+  .when .sep{color:#c9b6b0;margin:0 .5em}
+
+  /* ---------- greeting ---------- */
+  .greeting{
+    margin:clamp(34px,7vw,46px) 0 0;
+    padding-top:clamp(30px,6vw,40px);
+    border-top:1px solid var(--rule);
+    font-size:.95rem;
+    line-height:2.1;
+    color:var(--body);
   }
 
-  /* ---------- primary action ---------- */
-  .reply{
-    display:flex;align-items:center;justify-content:center;gap:.7em;
-    width:100%;margin:clamp(26px,5vw,34px) 0 0;
-    padding:1.02em 1.2em;
-    font-family:var(--serif);font-size:1rem;letter-spacing:.06em;
-    color:var(--paper);background:var(--wax);border:1px solid var(--wax);
-    border-radius:1px;cursor:pointer;
-    transition:background .22s ease,transform .22s ease;
-  }
-  .reply:hover{background:#8f2f1c;border-color:#8f2f1c}
-  .reply:active{transform:translateY(1px)}
-
-  /* ---------- programme: ruled sections, not cards ---------- */
-  .programme{margin:clamp(34px,6.5vw,52px) 0 0}
-  .folio{
-    display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,3.6vw,22px);
-    padding:clamp(22px,4.4vw,30px) 0;
+  /* ---------- venue ---------- */
+  .venue{
+    margin:clamp(38px,8vw,52px) 0 0;
+    padding-top:clamp(30px,6vw,40px);
     border-top:1px solid var(--rule);
   }
-  .folio:last-child{border-bottom:1px solid var(--rule)}
-  .folio h2{
-    margin:0;font-family:var(--sans);font-weight:400;
-    font-size:.6875rem;letter-spacing:.3em;text-transform:uppercase;
-    color:var(--wax);white-space:nowrap;padding-top:.35em;
+  .venue .name{
+    margin:0;
+    font-size:1.15rem;
+    letter-spacing:.05em;
   }
-  .venue-name{font-size:1.18rem;margin:0 0 .1em;letter-spacing:.03em}
-  .venue-addr{font-size:.87rem;color:var(--muted);margin:0}
-  .ways{margin:.9rem 0 0;padding:0;list-style:none;font-size:.87rem;line-height:1.95}
-  .ways li{display:grid;grid-template-columns:auto 1fr;gap:.85em;padding:.16em 0;word-break:keep-all}
-  .ways .k{color:var(--wax);font-family:var(--sans);font-size:.6875rem;
-    letter-spacing:.18em;text-transform:uppercase;padding-top:.5em}
-  .ways .v{color:#41363b;word-break:keep-all}
-
-  .tel{
-    display:inline-block;margin-top:1.1rem;
-    font-family:var(--sans);font-size:.6875rem;letter-spacing:.22em;
-    color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);
-    padding-bottom:3px;text-transform:uppercase;
+  .venue .addr{
+    margin:.45em 0 0;
+    font-size:.875rem;
+    line-height:1.85;
+    color:var(--muted);
   }
-  .tel:hover{color:var(--wax);border-color:var(--wax)}
 
-  /* ---------- gallery placeholders are absent by design ---------- */
-  .note{font-size:.82rem;color:var(--muted);line-height:1.9;margin:.4rem 0 0;word-break:keep-all}
-
-  /* ---------- share ---------- */
-  .share-row{display:grid;gap:.5rem;margin:.7rem 0 0}
-  .ghost{
-    display:flex;align-items:center;justify-content:center;gap:.6em;
-    padding:.82em 1em;font-family:var(--serif);font-size:.9rem;
-    color:var(--ink);background:none;border:1px solid var(--rule);border-radius:1px;
-    cursor:pointer;transition:border-color .18s ease,color .18s ease;
+  .ways{
+    margin:clamp(22px,4.5vw,28px) auto 0;
+    padding:0;
+    list-style:none;
+    max-width:22rem;
+    text-align:left;
   }
-  .ghost:hover{border-color:var(--wax);color:var(--wax)}
+  .ways li{
+    display:grid;
+    grid-template-columns:3.6rem 1fr;
+    gap:.9rem;
+    padding:.42em 0;
+    font-size:.85rem;
+    line-height:1.8;
+    color:var(--body);
+  }
+  .ways li + li{border-top:1px solid #f4ece8}
+  .ways .k{
+    font-size:.7rem;
+    letter-spacing:.16em;
+    color:var(--rose);
+    padding-top:.42em;
+  }
 
-  /* ---------- colophon: the seal returns ---------- */
+  /* ---------- actions ---------- */
+  .actions{
+    margin:clamp(30px,6vw,40px) 0 0;
+    display:grid;
+    gap:.55rem;
+  }
+  .btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:3rem;
+    padding:.85em 1.2em;
+    font-family:inherit;
+    font-size:.9rem;
+    letter-spacing:.08em;
+    color:var(--plum);
+    text-decoration:none;
+    background:#fffdfa;
+    border:1px solid var(--rule);
+    border-radius:1px;
+    cursor:pointer;
+    transition:border-color .18s ease,color .18s ease,background .18s ease;
+  }
+  .btn:hover{border-color:var(--rose);color:var(--rose)}
+  .btn:active{background:#faf4f0}
+  .btn--primary{
+    color:var(--rose);
+    background:#fffdfa;
+    border-color:var(--rose);
+  }
+  .btn--primary:hover{background:#fdf4f1;border-color:var(--rose);color:var(--rose)}
+
+  /* ---------- colophon ---------- */
   .colophon{
-    margin:clamp(40px,7vw,58px) 0 0;padding-top:clamp(24px,5vw,32px);
-    border-top:1px solid var(--rule);text-align:center;
+    margin:clamp(46px,9vw,62px) 0 0;
+    padding-top:clamp(26px,5vw,32px);
+    border-top:1px solid var(--rule);
   }
-  .colophon .mark{width:26px;height:26px;color:var(--wax);margin:0 auto .8rem}
-  .colophon p{margin:0;font-family:var(--sans);font-size:.625rem;
-    letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
-  .colophon .date-mark{margin-top:.5rem;letter-spacing:.28em;color:#75686d}
+  .colophon .mark{
+    margin:0;
+    font-size:.7rem;
+    letter-spacing:.34em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+  .colophon .year{
+    margin:.6em 0 0;
+    font-size:.7rem;
+    letter-spacing:.3em;
+    color:#7d6d72;
+    font-variant-numeric:tabular-nums;
+  }
 
-  @media (min-width:560px){
-    .share-row{grid-template-columns:1fr 1fr}
-  }
-  @media (min-width:720px){
-    body{font-size:16.5px}
-    .folio{grid-template-columns:132px 1fr}
-  }
-  /* ---------- transient confirmation ---------- */
+  /* ---------- toast ---------- */
   .toast{
-    position:fixed;left:50%;bottom:22px;translate:-50% 0;
-    padding:.72em 1.1em;background:var(--plum);color:var(--paper);
-    font-family:var(--sans);font-size:.6875rem;letter-spacing:.18em;
-    text-transform:uppercase;border-radius:1px;
-    opacity:0;pointer-events:none;transition:opacity .2s ease,translate .2s ease;
+    position:fixed;
+    left:50%;
+    bottom:22px;
+    translate:-50% 0;
+    padding:.72em 1.15em;
+    background:var(--plum);
+    color:#fffdfa;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    border-radius:1px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease,translate .2s ease;
     z-index:20;
   }
   .toast.on{opacity:1;translate:-50% -4px}
 
+  /* ---------- one authored moment: the page settles in ---------- */
+  @keyframes settle{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:none}
+  }
+  .names,.when,.greeting,.venue,.colophon{
+    animation:settle .62s cubic-bezier(.22,.61,.36,1) both;
+  }
+  .when{animation-delay:.07s}
+  .greeting{animation-delay:.13s}
+  .venue{animation-delay:.19s}
+  .colophon{animation-delay:.25s}
+
   @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+    *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
+    .names,.when,.greeting,.venue,.colophon{animation:none;opacity:1;transform:none}
   }
   @media print{
-    body{background:#fff;color:#000}
-    .reply,.ghost,.share-row,.toast,.envelope .flap{display:none!important}
-    .sheet{box-shadow:none;max-width:none}
+    body{background:#fff}
+    .actions,.toast,.btn{display:none!important}
+    .page{max-width:none;padding:0}
   }
 </style>
 </head>
 <body>
 
-<div class="envelope">
-  <!-- the flap, folded back; drawn not photographed -->
-  <svg class="flap" viewBox="0 0 640 210" width="640" height="210" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <path class="crease" d="M0 0 L320 178 L640 0" fill="none"/>
-    <path class="seam" d="M0 8 L320 186"/>
-    <path class="seam" d="M640 8 L320 186"/>
-  </svg>
+<main class="page">
 
-  <main class="sheet">
-    <div class="lattice" aria-hidden="true">
-      <i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-    </div>
+  <h1 class="names">정탁<span class="heart">♥</span>문현</h1>
 
-    <h1 class="names">
-      <span>정탁</span>
-      <svg class="seal" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        <path d="M20 3c4.6 0 8.5 1.9 11.2 5.2C34.4 11.9 36 16.9 35 22.2c-1.1 6-5.9 11.6-11.6 13.6-1.1.4-2.3.6-3.4.6s-2.3-.2-3.4-.6C10.9 33.8 6.1 28.2 5 22.2 4 16.9 5.6 11.9 8.8 8.2 11.5 4.9 15.4 3 20 3Z"
-              fill="currentColor"/>
-        <path class="crack" d="M20 6.5 17.4 17.2 21.1 20.4 18.6 27.6 20 33.4" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>문현</span>
-    </h1>
+  <p class="when">
+    <span class="row">2027<span class="sep">·</span>03<span class="sep">·</span>01<span class="sep">·</span>월요일</span>
+    <span class="row">낮 12시 30분</span>
+  </p>
 
-    <p class="opening">저희 두 사람이 결혼합니다.<br>
+  <p class="greeting">
+    저희 두 사람이 결혼합니다.<br>
     서로의 계절을 함께 걷겠다는 약속을<br>
-    여러분 앞에서 나누고자 합니다.</p>
+    여러분 앞에서 나누고자 합니다<br>
+    오셔서 축복해 주시면 감사하겠습니다.
+  </p>
 
-    <div class="dateline">
-      <span class="side">2027</span>
-      <span class="stamp">03 <b>·</b> 01 <b>·</b> 12:30</span>
-      <span class="side">월요일</span>
+  <section class="venue" aria-labelledby="venue-h">
+    <h2 id="venue-h" class="name">메종 드 아나하</h2>
+    <p class="addr">
+      서울특별시 강남구 언주로 517, B1<br>
+      신라스테이 역삼
+    </p>
+
+    <ul class="ways">
+      <li>
+        <span class="k">지하철</span>
+        <span>2호선·수인분당선 선릉역 6번 출구<br>도보 13분, 셔틀버스 10분 간격 운행</span>
+      </li>
+      <li>
+        <span class="k">버스</span>
+        <span>141 · 242 · 361 · 6411<br>KT강남지사 정류장 하차</span>
+      </li>
+      <li>
+        <span class="k">주차</span>
+        <span>신라스테이 B2–B5, 2시간 무료<br>혼잡이 예상되니 대중교통을 권합니다</span>
+      </li>
+    </ul>
+
+    <div class="actions">
+      <a class="btn btn--primary"
+         href="https://map.kakao.com/?q=%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98"
+         target="_blank" rel="noopener">카카오맵에서 보기</a>
+      <button class="btn" type="button" id="share-native">공유하기</button>
+      <button class="btn" type="button" id="share-copy">링크 복사</button>
     </div>
-    <p class="understamp">Maison de Anaha · Seoul</p>
+  </section>
 
-    <button class="reply" type="button" data-scroll="place">
-      오시는 길 보기
-    </button>
+  <footer class="colophon">
+    <p class="mark">Jungtak &amp; Moonhyun</p>
+    <p class="year">2027 · 03 · 01</p>
+  </footer>
 
-    <div class="programme">
-
-      <section class="folio" id="place" aria-labelledby="place-h">
-        <h2 id="place-h">오시는 길</h2>
-        <div>
-          <p class="venue-name">메종 드 아나하</p>
-          <p class="venue-addr">서울특별시 강남구 언주로 517, B1<br>신라스테이 역삼</p>
-          <ul class="ways">
-            <li><span class="k">지하철</span><span class="v">2호선·수인분당선 선릉역 6번 출구, 도보 13분<br>셔틀버스 10분 간격 운행</span></li>
-            <li><span class="k">버스</span><span class="v">141 · 242 · 361 · 6411<br>KT강남지사 정류장 하차</span></li>
-            <li><span class="k">주차</span><span class="v">신라스테이 B2–B5, 2시간 무료<br>혼잡이 예상되니 대중교통을 권합니다</span></li>
-          </ul>
-          <a class="tel" href="https://map.kakao.com/?q=%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98"
-             target="_blank" rel="noopener">카카오맵에서 보기</a>
-        </div>
-      </section>
-
-      <section class="folio" aria-labelledby="share-h">
-        <h2 id="share-h">전하기</h2>
-        <div>
-          <div class="share-row">
-            <button class="ghost" type="button" id="share-native">공유하기</button>
-            <button class="ghost" type="button" id="share-copy">링크 복사</button>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <footer class="colophon">
-      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        <path d="M20 4.5c3.9 0 7.2 1.6 9.5 4.4 2.7 3.2 4.1 7.4 3.2 11.9-.9 5.1-5 9.8-9.8 11.5-.9.3-1.9.5-2.9.5s-2-.2-2.9-.5C12.3 30.6 8.2 25.9 7.3 20.8c-.9-4.5.5-8.7 3.2-11.9C12.8 6.1 16.1 4.5 20 4.5Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
-        <path d="M20 8.5v22" stroke="currentColor" stroke-width="1" stroke-dasharray="1 4"/>
-      </svg>
-      <p>Jungtak &amp; Moonhyun</p>
-      <p class="date-mark">2027 · 03 · 01</p>
-    </footer>
-  </main>
-</div>
+</main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -316,38 +295,9 @@
     toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2200);
   }
 
-  // the primary action takes the guest to the directions
-  document.querySelectorAll("[data-scroll]").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var el = document.getElementById(btn.dataset.scroll);
-      if (!el) return;
-      el.scrollIntoView({behavior:"smooth", block:"start"});
-      el.setAttribute("tabindex","-1");
-      setTimeout(function(){ el.focus({preventScroll:true}); }, 420);
-    });
-  });
-
-  // share
-  var shareText = "정탁 ♥ 문현의 결혼식에 초대합니다. 2027년 3월 1일 월요일 12:30, 메종 드 아나하.";
+  var shareText = "정탁 ♥ 문현의 결혼식에 초대합니다. 2027년 3월 1일 월요일 낮 12시 30분, 메종 드 아나하.";
   var shareUrl = location.href.split("#")[0];
 
-  function kakaoShare(){
-    // No Kakao JS SDK is loaded (it needs a JS key the couple must supply),
-    // so this is the device share sheet, with copy as the fallback.
-    if (navigator.share){
-      navigator.share({title:"정탁 ♥ 문현", text:shareText, url:shareUrl}).catch(function(){});
-      return;
-    }
-    copyLink();
-  }
-  function copyLink(){
-    if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(shareUrl).then(function(){ toast("링크를 복사했습니다"); })
-        .catch(function(){ legacyCopy(shareUrl, function(){ toast("링크를 복사했습니다"); }); });
-    } else {
-      legacyCopy(shareUrl, function(){ toast("링크를 복사했습니다"); });
-    }
-  }
   function legacyCopy(value, done){
     var ta = document.createElement("textarea");
     ta.value = value;
@@ -361,11 +311,29 @@
     document.body.removeChild(ta);
   }
 
-  var kk = document.getElementById("share-native");
-  var cp = document.getElementById("share-copy");
-  if (kk) kk.addEventListener("click", kakaoShare);
-  if (cp) cp.addEventListener("click", copyLink);
+  function copyLink(){
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(shareUrl)
+        .then(function(){ toast("링크를 복사했습니다"); })
+        .catch(function(){ legacyCopy(shareUrl, function(){ toast("링크를 복사했습니다"); }); });
+    } else {
+      legacyCopy(shareUrl, function(){ toast("링크를 복사했습니다"); });
+    }
+  }
 
+  function shareNative(){
+    if (navigator.share){
+      navigator.share({title:"정탁 ♥ 문현", text:shareText, url:shareUrl})
+        .catch(function(){ /* dismissed */ });
+      return;
+    }
+    copyLink();
+  }
+
+  var sn = document.getElementById("share-native");
+  var sc = document.getElementById("share-copy");
+  if (sn) sn.addEventListener("click", shareNative);
+  if (sc) sc.addEventListener("click", copyLink);
 })();
 </script>
 </body>
