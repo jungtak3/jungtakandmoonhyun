@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>정탁 · 문현 — 2027년 3월 1일</title>
-<meta name="description" content="정탁과 문현이 결혼합니다. 2027년 3월 1일 월요일 낮 12시 30분, 메종 드 아나하.">
+<title>주정탁 · 장문현 — 2027년 3월 1일</title>
+<meta name="description" content="주정탁과 장문현이 결혼합니다. 2027년 3월 1일 월요일 낮 12시 30분, 메종 드 아나하.">
 <meta name="theme-color" content="#fdfaf6">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/GowunBatang-Regular.woff2">
 <style>
@@ -17,6 +17,7 @@
 
   :root{
     --cream:#fdfaf6;
+    --paper:#fffdfa;
     --plum:#3a2630;
     --body:#5c4a53;
     --muted:#6b5a62;
@@ -34,7 +35,6 @@
     font-family:var(--serif);
     font-size:16px;
     line-height:1.9;
-    letter-spacing:.01em;
     word-break:keep-all;
     overflow-wrap:anywhere;
     -webkit-font-smoothing:antialiased;
@@ -46,231 +46,230 @@
   .page{
     max-width:460px;
     margin:0 auto;
-    padding:clamp(52px,13vw,86px) clamp(22px,6vw,32px) clamp(48px,10vw,72px);
+    padding:clamp(48px,11vw,78px) clamp(22px,6vw,32px) clamp(44px,9vw,64px);
     text-align:center;
   }
 
-  /* ---------- masthead ---------- */
-  .names{
+  /* ---------- 첫 화면: 날짜가 가장 크다 ---------- */
+  .cover .date{
     margin:0;
-    font-size:clamp(1.9rem,8.4vw,2.35rem);
+    font-size:clamp(1.65rem,7.6vw,2rem);
+    letter-spacing:.18em;
+    font-variant-numeric:tabular-nums;
+    line-height:1.4;
+  }
+  .cover .day{
+    margin:.5em 0 0;
+    font-size:.72rem;
+    letter-spacing:.42em;
+    color:var(--rose);
+    text-transform:uppercase;
+  }
+  .names{
+    margin:clamp(26px,5.5vw,36px) 0 0;
+    font-size:clamp(1.5rem,6.6vw,1.8rem);
     font-weight:400;
-    line-height:1.3;
-    letter-spacing:.12em;
+    line-height:1.45;
+    letter-spacing:.14em;
   }
   .names .heart{
     display:inline-block;
     color:var(--rose);
-    font-size:.56em;
-    vertical-align:.14em;
-    margin:0 .28em;
+    font-size:.52em;
+    vertical-align:.16em;
+    margin:0 .34em;
+  }
+  .cover .place{
+    margin:clamp(16px,3.4vw,22px) 0 0;
+    font-size:.9rem;
+    letter-spacing:.03em;
+    color:var(--body);
+    line-height:1.85;
   }
 
-  .when{
-    margin:clamp(18px,4vw,24px) 0 0;
+  /* ---------- 공통 섹션 ---------- */
+  .sec{
+    margin:clamp(40px,8vw,56px) 0 0;
+    padding-top:clamp(30px,6vw,40px);
+    border-top:1px solid var(--rule);
+  }
+  .sec h2{
+    margin:0 0 clamp(18px,3.6vw,24px);
+    font-size:.72rem;
+    font-weight:400;
+    letter-spacing:.34em;
+    color:var(--rose);
+    text-transform:uppercase;
+  }
+
+  .greeting{
+    margin:0;
     font-size:.95rem;
-    letter-spacing:.1em;
+    line-height:2.15;
     color:var(--body);
+  }
+
+  /* ---------- 일정 ---------- */
+  .cal{
+    margin:clamp(18px,3.4vw,22px) 0 0;
+    padding:1.2em .9em 1em;
+    background:var(--paper);
+    border:1px solid var(--rule);
+  }
+  .cal .mo{
+    margin:0 0 .9em;
+    font-size:.78rem;
+    letter-spacing:.24em;
+    color:var(--muted);
     font-variant-numeric:tabular-nums;
   }
-  .when .row{display:block;white-space:nowrap}
-  .when .row + .row{margin-top:.35em}
-  .when .sep{color:#c9b6b0;margin:0 .5em}
-
-  /* ---------- greeting ---------- */
-  .greeting{
-    margin:clamp(34px,7vw,46px) 0 0;
-    padding-top:clamp(30px,6vw,40px);
-    border-top:1px solid var(--rule);
-    font-size:.95rem;
-    line-height:2.1;
-    color:var(--body);
-  }
-
-  /* ---------- venue ---------- */
-  .venue{
-    margin:clamp(38px,8vw,52px) 0 0;
-    padding-top:clamp(30px,6vw,40px);
-    border-top:1px solid var(--rule);
-  }
-  .venue .name{
-    margin:0;
-    font-size:1.15rem;
-    letter-spacing:.05em;
-  }
-  .venue .addr{
-    margin:.45em 0 0;
-    font-size:.875rem;
-    line-height:1.85;
+  .cal table{width:100%;border-collapse:collapse;table-layout:fixed}
+  .cal th{
+    padding:.3em 0 .5em;
+    font-weight:400;
+    font-size:.66rem;
+    letter-spacing:.08em;
     color:var(--muted);
   }
-
-  .ways{
-    margin:clamp(22px,4.5vw,28px) 0 0;
-    padding:0;
-    list-style:none;
+  .cal th.sun{color:var(--rose)}
+  .cal td{
+    padding:.34em 0;
+    font-size:.8rem;
+    font-variant-numeric:tabular-nums;
+    color:var(--plum);
   }
+  .cal td:empty{color:transparent}
+  .cal td.mark{color:var(--paper)}
+  .cal td.mark span{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:1.95em;height:1.95em;background:var(--rose);border-radius:50%;
+    color:var(--paper);
+  }
+  .cal .dday{
+    margin:1.1em 0 0;
+    padding-top:.9em;
+    border-top:1px solid var(--rule);
+    font-size:.8rem;
+    letter-spacing:.16em;
+    color:var(--rose);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* ---------- 장소 ---------- */
+  .venue-name{margin:0;font-size:1.12rem;letter-spacing:.05em}
+  .venue-hall{margin:.35em 0 0;font-size:.85rem;color:var(--muted)}
+  .venue-addr{margin:.6em 0 0;font-size:.85rem;line-height:1.85;color:var(--muted)}
+  .venue-addr .btn-copy{
+    display:inline-block;margin-left:.5em;
+    font-family:inherit;font-size:.72rem;letter-spacing:.08em;
+    color:var(--rose);background:none;border:1px solid currentColor;
+    border-radius:1px;padding:.24em .6em;cursor:pointer;
+    vertical-align:middle;
+  }
+  .venue-addr .btn-copy:hover{background:var(--rose);color:var(--paper)}
+
+  .maps{
+    margin:clamp(16px,3.2vw,20px) 0 0;
+    font-size:.85rem;color:#c2b3ad;
+  }
+  .maps a,.links a,.link{
+    color:var(--body);text-decoration:none;
+    border-bottom:1px solid #d9cbc5;padding-bottom:.1em;
+    transition:color .18s ease,border-color .18s ease;
+  }
+  .maps a:hover,.links a:hover,.link:hover{color:var(--rose);border-color:var(--rose)}
+
+  .links{margin:.2em 0 0;font-size:.85rem;color:#c2b3ad}
+  .link{
+    font:inherit;background:none;border:0;border-bottom:1px solid #d9cbc5;
+    cursor:pointer;padding:0 0 .1em;color:var(--body);
+  }
+
+  .ways{margin:clamp(20px,4vw,26px) 0 0;padding:0;list-style:none;text-align:left}
   .ways li{
-    display:grid;
-    grid-template-columns:auto auto;
-    justify-content:center;
-    align-items:baseline;
-    gap:.95em;
-    padding:.5em 0;
-    font-size:.85rem;
-    line-height:1.8;
-    color:var(--body);
-    text-align:left;
+    display:grid;grid-template-columns:3.2em 1fr;
+    gap:.9em;padding:.6em 0;font-size:.85rem;line-height:1.85;color:var(--body);
   }
   .ways li + li{border-top:1px solid #f4ece8}
   .ways .k{
-    font-size:.7rem;
-    letter-spacing:.16em;
-    color:var(--rose);
-    text-align:right;
+    font-size:.72rem;letter-spacing:.12em;color:var(--rose);
+    padding-top:.3em;
   }
 
-  /* ---------- actions ---------- */
-  .actions{
-    margin:clamp(30px,6vw,40px) 0 0;
-    display:grid;
-    gap:.55rem;
-  }
-  .btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:3rem;
-    padding:.85em 1.2em;
-    font-family:inherit;
-    font-size:.9rem;
-    letter-spacing:.08em;
-    color:var(--plum);
-    text-decoration:none;
-    background:#fffdfa;
-    border:1px solid var(--rule);
-    border-radius:1px;
-    cursor:pointer;
-    transition:border-color .18s ease,color .18s ease,background .18s ease;
-  }
-  .btn:hover{border-color:var(--rose);color:var(--rose)}
-  .btn:active{background:#faf4f0}
-  .btn--primary{
-    color:var(--rose);
-    background:#fffdfa;
-    border-color:var(--rose);
-  }
-  .btn--primary:hover{background:#fdf4f1;border-color:var(--rose);color:var(--rose)}
+  /* ---------- 공유 ---------- */
 
-  /* ---------- colophon ---------- */
-  .colophon{
-    margin:clamp(46px,9vw,62px) 0 0;
-    padding-top:clamp(26px,5vw,32px);
-    border-top:1px solid var(--rule);
-  }
-  .colophon .mark{
-    margin:0;
-    font-size:.7rem;
-    letter-spacing:.3em;
-    color:var(--muted);
-    text-transform:uppercase;
-  }
-  .colophon .year{
-    margin:.6em 0 0;
-    font-size:.7rem;
-    letter-spacing:.3em;
-    color:#7d6d72;
-    font-variant-numeric:tabular-nums;
+  /* ---------- 엔딩 ---------- */
+  .ending{margin:clamp(44px,9vw,60px) 0 0;text-align:center}
+  .ending p{margin:0;font-size:.9rem;line-height:2.1;color:var(--body)}
+  .ending .sig{
+    margin:1.6em 0 0;font-size:.7rem;letter-spacing:.32em;
+    color:#7d6d72;text-transform:uppercase;
   }
 
-  /* ---------- toast ---------- */
   .toast{
-    position:fixed;
-    left:50%;
-    bottom:22px;
-    translate:-50% 0;
-    padding:.72em 1.15em;
-    background:var(--plum);
-    color:#fffdfa;
-    font-size:.72rem;
-    letter-spacing:.14em;
-    border-radius:1px;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .2s ease,translate .2s ease;
+    position:fixed;left:50%;bottom:22px;translate:-50% 0;
+    padding:.7em 1.1em;background:var(--plum);color:var(--paper);
+    font-size:.72rem;letter-spacing:.12em;border-radius:1px;
+    opacity:0;pointer-events:none;transition:opacity .2s ease,translate .2s ease;
     z-index:20;
   }
   .toast.on{opacity:1;translate:-50% -4px}
 
-  /* ---------- one authored moment: the page settles in ---------- */
   @keyframes settle{
     from{opacity:0;transform:translateY(7px)}
     to{opacity:1;transform:none}
   }
-  .names,.when{
-    animation:settle .42s cubic-bezier(.16,1,.3,1) both;
-  }
-  .when{animation-delay:.06s}
+  .cover{animation:settle .42s cubic-bezier(.16,1,.3,1) both}
 
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
-    .names,.when{animation:none;opacity:1;transform:none}
+    .cover{animation:none;opacity:1;transform:none}
   }
-  /* ---------- desktop: one sheet, two columns ---------- */
+
+  /* ---------- 데스크톱 ---------- */
   @media (min-width:960px){
     html{height:100%}
-    /* a sheet taller than the window scrolls from its top, never clipped by centring */
     body{
       min-height:100dvh;
-      display:flex;
-      align-items:center;
-      align-items:safe center;
-      justify-content:safe center;
-      padding:clamp(30px,4vw,60px);
+      display:flex;align-items:center;align-items:safe center;justify-content:safe center;
+      padding:clamp(28px,3.6vw,54px);
       background:#f4eee7;
     }
     .page{
-      width:100%;
-      max-width:820px;
-      margin:0;
-      padding:clamp(52px,4.2vw,66px) clamp(40px,3.4vw,52px) clamp(44px,3.8vw,56px);
+      width:100%;max-width:860px;margin:0;
+      padding:clamp(38px,3vw,50px) clamp(36px,2.8vw,46px) clamp(30px,2.6vw,40px);
       display:grid;
-      grid-template-columns:0.94fr 1.06fr;
-      column-gap:clamp(36px,3.6vw,50px);
-      align-items:center;
+      grid-template-columns:0.92fr 1.08fr;
+      column-gap:clamp(38px,3.8vw,54px);
+      align-items:start;
       background:var(--cream);
       border:1px solid #ece1d8;
-      box-shadow:
-        0 1px 1px rgba(58,38,48,.04),
-        0 34px 76px -48px rgba(58,38,48,.32);
+      box-shadow:0 1px 1px rgba(58,38,48,.04),0 32px 72px -46px rgba(58,38,48,.30);
+      text-align:left;
     }
-    .head{grid-column:1;grid-row:1}
-    .details{
-      grid-column:2;grid-row:1;
-      align-self:center;
-    }
-    .colophon{grid-column:1 / -1;grid-row:2;margin-top:clamp(30px,3vw,40px);padding-top:1.4em;text-align:left}
-
-    .page{text-align:left}
-    .names{font-size:2.6rem;line-height:1.28}
-    .when{margin-top:1.1em;font-size:.98rem}
-    .when .sep{margin:0 .42em}
-    .greeting{margin-top:1.7em;padding-top:1.6em;border-top:1px solid var(--rule);text-align:left;font-size:.95rem;line-height:2.1}
-    .venue{margin-top:0;padding-top:0;border-top:0;text-align:left}
-    .venue .name{font-size:1.18rem}
-    .venue .addr{margin-top:.5em}
-    .ways{margin-top:1.4em}
-    .ways li{grid-template-columns:3.4em 1fr;justify-content:start;align-items:start;gap:.85em;font-size:.9rem;line-height:1.85;text-wrap:pretty}
-    .ways .k{text-align:left;padding-top:.25em}
-    .actions{margin-top:1.6em;grid-template-columns:1fr 1fr;gap:.5rem}
-    .actions .btn--primary{grid-column:1 / -1}
-    .btn{font-size:.85rem;min-height:2.8rem}
+    .col-a{grid-column:1;grid-row:1}
+    .col-b{grid-column:2;grid-row:1}
+    .ending{grid-column:1 / -1;grid-row:2;margin-top:clamp(20px,1.8vw,26px)}
+    .sec{margin-top:clamp(16px,1.5vw,22px);padding-top:clamp(13px,1.3vw,17px)}
+    .cover .date{font-size:1.8rem}
+    .names{font-size:1.6rem;margin-top:.9em}
+    .greeting{text-align:left}
+    .cal{padding:0;background:none;border:0}
+    .cal table,.cal .mo{display:none}
+    .cal .dday{margin:0;padding:0;border:0;font-size:.8rem}
+    .sec h2{margin-bottom:clamp(14px,1.4vw,18px)}
+    .greeting{line-height:2.05}
+    .ways{margin-top:1em}
+    .ways li{padding:.45em 0}
+    .maps{grid-template-columns:repeat(3,1fr)}
+    .ways li{font-size:.83rem}
+    .ending .sig{letter-spacing:.3em}
   }
 
   @media print{
     body{background:#fff}
-    .actions,.toast,.btn{display:none!important}
-    .page{max-width:none;padding:0}
+    .actions,.toast,.btn-copy,.maps{display:none!important}
+    .page{max-width:none;padding:0;display:block;border:0;box-shadow:none}
   }
 </style>
 </head>
@@ -278,34 +277,79 @@
 
 <main class="page">
 
-  <div class="head">
-  <h1 class="names">정탁<span class="heart">♥</span>문현</h1>
+  <div class="col-a">
+  <div class="cover">
+    <p class="date">2027. 03. 01</p>
+    <p class="day">Monday · 12:30 PM</p>
 
-  <p class="when">
-    <span class="row">2027<span class="sep">·</span>03<span class="sep">·</span>01<span class="sep">·</span>월요일</span>
-    <span class="row">낮 12시 30분</span>
-  </p>
+    <h1 class="names">주정탁<span class="heart">♥</span>장문현</h1>
 
-  <p class="greeting">
-    저희 두 사람이 결혼합니다.<br>
-    서로의 계절을 함께 걷겠다는 약속을<br>
-    여러분 앞에서 나누고자 합니다.<br><br>
-    오셔서 축복해 주시면 감사하겠습니다.
-  </p>
+    <p class="place">
+      메종 드 아나하 B1<br>
+      서울특별시 강남구 언주로 517
+    </p>
   </div>
 
-  <div class="details">
-  <section class="venue" aria-labelledby="venue-h">
-    <h2 id="venue-h" class="name">메종 드 아나하</h2>
-    <p class="addr">
-      서울특별시 강남구 언주로 517, B1<br>
-      신라스테이 역삼
+  <section class="sec" aria-labelledby="invite-h">
+    <h2 id="invite-h">Invitation</h2>
+    <p class="greeting">
+      저희 두 사람이 결혼합니다.<br>
+      서로의 계절을 함께 걷겠다는 약속을<br>
+      여러분 앞에서 나누고자 합니다.<br><br>
+      오셔서 축복해 주시면 감사하겠습니다.
+    </p>
+
+  </section>
+
+  <section class="sec" aria-labelledby="when-h">
+    <h2 id="when-h">The Day</h2>
+    <p class="greeting" style="font-size:.88rem;line-height:2">
+      2027년 3월 1일 월요일<br>
+      낮 12시 30분 · 메종 드 아나하 B1
+    </p>
+
+    <div class="cal">
+      <p class="mo">2027 · 03</p>
+      <table role="grid" aria-label="2027년 3월 달력">
+        <thead>
+          <tr><th class="sun">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td class="mark"><span>1</span></td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+          <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+          <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+          <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+          <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <p class="dday" id="dday"></p>
+    </div>
+
+  </section>
+  </div>
+
+  <div class="col-b">
+  <section class="sec" aria-labelledby="where-h" style="margin-top:0;padding-top:0;border-top:0">
+    <h2 id="where-h">Location</h2>
+    <p class="venue-name">메종 드 아나하</p>
+    <p class="venue-hall">지하 1층</p>
+    <p class="venue-addr">
+      서울특별시 강남구 언주로 517<br>
+      신라스테이 역삼<button class="btn-copy" type="button" id="addr-copy">주소 복사</button>
+    </p>
+
+    <p class="maps">
+      <a href="https://map.kakao.com/?q=%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">카카오맵</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://map.naver.com/p/search/%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">네이버지도</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://map.kakao.com/link/to/%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">길찾기</a>
     </p>
 
     <ul class="ways">
       <li>
         <span class="k">지하철</span>
-        <span>2호선·수인분당선 선릉역 6번 출구<br>도보 13분, 셔틀버스 10분 간격 운행</span>
+        <span>2호선·수인분당선 선릉역 6번 출구<br>도보 13분, 셔틀버스 10분 간격</span>
       </li>
       <li>
         <span class="k">버스</span>
@@ -316,21 +360,23 @@
         <span>신라스테이 B2–B5, 2시간 무료<br>혼잡이 예상되니 대중교통을 권합니다</span>
       </li>
     </ul>
+  </section>
 
-    <div class="actions">
-      <a class="btn btn--primary"
-         href="https://map.kakao.com/?q=%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98"
-         target="_blank" rel="noopener">카카오맵에서 보기</a>
-      <button class="btn" type="button" id="share-native">공유하기</button>
-      <button class="btn" type="button" id="share-copy">링크 복사</button>
-    </div>
+  <section class="sec" aria-labelledby="share-h">
+    <h2 id="share-h">Share</h2>
+    <p class="links">
+      <button type="button" class="link" id="share-native">카카오톡 공유</button>
+      <span aria-hidden="true">·</span>
+      <button type="button" class="link" id="share-copy">링크 복사</button>
+      <span aria-hidden="true">·</span>
+      <a class="link" id="cal-save" href="#" target="_blank" rel="noopener">캘린더에 저장</a>
+    </p>
   </section>
   </div>
 
-  <footer class="colophon">
-    <p class="mark">Jungtak &amp; Moonhyun</p>
-    <p class="year">2027 · 03 · 01</p>
-  </footer>
+  <div class="ending">
+    <p class="sig">Jeongtak &amp; Moonhyun</p>
+  </div>
 
 </main>
 
@@ -345,11 +391,8 @@
     toastEl.textContent = msg;
     toastEl.classList.add("on");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2200);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2000);
   }
-
-  var shareText = "정탁 ♥ 문현의 결혼식에 초대합니다. 2027년 3월 1일 월요일 낮 12시 30분, 메종 드 아나하.";
-  var shareUrl = location.href.split("#")[0];
 
   function legacyCopy(value, done){
     var ta = document.createElement("textarea");
@@ -363,30 +406,69 @@
     catch(e){ toast("복사하지 못했습니다"); }
     document.body.removeChild(ta);
   }
-
-  function copyLink(){
+  function copyText(value, done){
     if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(shareUrl)
-        .then(function(){ toast("링크를 복사했습니다"); })
-        .catch(function(){ legacyCopy(shareUrl, function(){ toast("링크를 복사했습니다"); }); });
+      navigator.clipboard.writeText(value).then(done).catch(function(){ legacyCopy(value, done); });
     } else {
-      legacyCopy(shareUrl, function(){ toast("링크를 복사했습니다"); });
+      legacyCopy(value, done);
     }
   }
 
-  function shareNative(){
-    if (navigator.share){
-      navigator.share({title:"정탁 ♥ 문현", text:shareText, url:shareUrl})
-        .catch(function(){ /* dismissed */ });
-      return;
-    }
-    copyLink();
+  /* 주소 복사 */
+  var addrBtn = document.getElementById("addr-copy");
+  if (addrBtn){
+    addrBtn.addEventListener("click", function(){
+      copyText("서울특별시 강남구 언주로 517", function(){ toast("주소를 복사했습니다"); });
+    });
   }
+
+  /* D-day */
+  var ddayEl = document.getElementById("dday");
+  var WED = new Date(2027, 2, 1);
+  function dday(){
+    if (!ddayEl) return;
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.round((WED - today) / 86400000);
+    if (days > 0) ddayEl.textContent = "예식까지 " + days + "일 남았습니다";
+    else if (days === 0) ddayEl.textContent = "오늘입니다";
+    else ddayEl.textContent = "";
+  }
+  dday();
+
+  /* 내 캘린더에 저장 (구글 캘린더) */
+  var calBtn = document.getElementById("cal-save");
+  if (calBtn){
+    var start = "20270301T033000Z";   /* 12:30 KST */
+    var end   = "20270301T053000Z";
+    var title = "주정탁 ♥ 장문현 결혼식";
+    var loc   = "메종 드 아나하, 서울특별시 강남구 언주로 517";
+    var det   = "낮 12시 30분, 메종 드 아나하 B1";
+    calBtn.href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+      + "&text=" + encodeURIComponent(title)
+      + "&dates=" + start + "/" + end
+      + "&ctz=Asia/Seoul"
+      + "&location=" + encodeURIComponent(loc)
+      + "&details=" + encodeURIComponent(det);
+  }
+
+  /* 공유 */
+  var shareText = "주정탁 ♥ 장문현의 결혼식에 초대합니다. 2027년 3월 1일 월요일 낮 12시 30분, 메종 드 아나하.";
+  var shareUrl = location.href.split("#")[0];
 
   var sn = document.getElementById("share-native");
+  if (sn) sn.addEventListener("click", function(){
+    if (navigator.share){
+      navigator.share({title:"주정탁 ♥ 장문현", text:shareText, url:shareUrl}).catch(function(){});
+      return;
+    }
+    copyText(shareUrl, function(){ toast("링크를 복사했습니다"); });
+  });
+
   var sc = document.getElementById("share-copy");
-  if (sn) sn.addEventListener("click", shareNative);
-  if (sc) sc.addEventListener("click", copyLink);
+  if (sc) sc.addEventListener("click", function(){
+    copyText(shareUrl, function(){ toast("링크를 복사했습니다"); });
+  });
 })();
 </script>
 </body>
