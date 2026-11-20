@@ -95,11 +95,10 @@
   }
   .sec h2{
     margin:0 0 clamp(18px,3.6vw,24px);
-    font-size:.72rem;
+    font-size:.8rem;
     font-weight:400;
-    letter-spacing:.34em;
+    letter-spacing:.3em;
     color:var(--rose);
-    text-transform:uppercase;
   }
 
   .greeting{
@@ -160,13 +159,12 @@
   .venue-hall{margin:.35em 0 0;font-size:.85rem;color:var(--muted)}
   .venue-addr{margin:.6em 0 0;font-size:.85rem;line-height:1.85;color:var(--muted)}
   .venue-addr .btn-copy{
-    display:inline-block;margin-left:.5em;
-    font-family:inherit;font-size:.72rem;letter-spacing:.08em;
-    color:var(--rose);background:none;border:1px solid currentColor;
-    border-radius:1px;padding:.24em .6em;cursor:pointer;
-    vertical-align:middle;
+    font-family:inherit;font-size:inherit;
+    color:var(--body);background:none;border:0;padding:0;
+    border-bottom:1px solid #d9cbc5;cursor:pointer;
+    transition:color .18s ease,border-color .18s ease;
   }
-  .venue-addr .btn-copy:hover{background:var(--rose);color:var(--paper)}
+  .venue-addr .btn-copy:hover{color:var(--rose);border-color:var(--rose)}
 
   .maps{
     margin:clamp(16px,3.2vw,20px) 0 0;
@@ -291,7 +289,7 @@
   </div>
 
   <section class="sec" aria-labelledby="invite-h">
-    <h2 id="invite-h">Invitation</h2>
+    <h2 id="invite-h">초대합니다</h2>
     <p class="greeting">
       저희 두 사람이 결혼합니다.<br>
       서로의 계절을 함께 걷겠다는 약속을<br>
@@ -302,7 +300,7 @@
   </section>
 
   <section class="sec" aria-labelledby="when-h">
-    <h2 id="when-h">The Day</h2>
+    <h2 id="when-h">예식 안내</h2>
     <p class="greeting" style="font-size:.88rem;line-height:2">
       2027년 3월 1일 월요일<br>
       낮 12시 30분 · 메종 드 아나하 B1
@@ -330,15 +328,16 @@
 
   <div class="col-b">
   <section class="sec" aria-labelledby="where-h" style="margin-top:0;padding-top:0;border-top:0">
-    <h2 id="where-h">Location</h2>
+    <h2 id="where-h">오시는 길</h2>
     <p class="venue-name">메종 드 아나하</p>
-    <p class="venue-hall">지하 1층</p>
     <p class="venue-addr">
       서울특별시 강남구 언주로 517<br>
-      신라스테이 역삼<button class="btn-copy" type="button" id="addr-copy">주소 복사</button>
+      신라스테이 역삼
     </p>
 
     <p class="maps">
+      <button type="button" class="link" id="addr-copy">주소 복사</button>
+      <span aria-hidden="true">·</span>
       <a href="https://map.kakao.com/?q=%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">카카오맵</a>
       <span aria-hidden="true">·</span>
       <a href="https://map.naver.com/p/search/%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">네이버지도</a>
@@ -363,7 +362,7 @@
   </section>
 
   <section class="sec" aria-labelledby="share-h">
-    <h2 id="share-h">Share</h2>
+    <h2 id="share-h">공유</h2>
     <p class="links">
       <button type="button" class="link" id="share-native">카카오톡 공유</button>
       <span aria-hidden="true">·</span>
@@ -375,7 +374,7 @@
   </div>
 
   <div class="ending">
-    <p class="sig">Jeongtak &amp; Moonhyun</p>
+    <p class="sig">Ju Jeongtak &amp; Jang Moonhyun</p>
   </div>
 
 </main>
@@ -435,22 +434,6 @@
     else ddayEl.textContent = "";
   }
   dday();
-
-  /* 내 캘린더에 저장 (구글 캘린더) */
-  var calBtn = document.getElementById("cal-save");
-  if (calBtn && (!calBtn.getAttribute("href") || calBtn.getAttribute("href") === "#")){
-    var start = "20270301T033000Z";   /* 12:30 KST */
-    var end   = "20270301T053000Z";
-    var title = "주정탁 ♥ 장문현 결혼식";
-    var loc   = "메종 드 아나하, 서울특별시 강남구 언주로 517";
-    var det   = "낮 12시 30분, 메종 드 아나하 B1";
-    calBtn.href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
-      + "&text=" + encodeURIComponent(title)
-      + "&dates=" + start + "/" + end
-      + "&ctz=Asia/Seoul"
-      + "&location=" + encodeURIComponent(loc)
-      + "&details=" + encodeURIComponent(det);
-  }
 
   /* 공유 */
   var shareText = "주정탁 ♥ 장문현의 결혼식에 초대합니다. 2027년 3월 1일 월요일 낮 12시 30분, 메종 드 아나하.";
