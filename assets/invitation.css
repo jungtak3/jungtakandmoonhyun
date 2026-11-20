@@ -67,13 +67,6 @@
     vertical-align:.06em;
     margin:0 .44em;
   }
-  .cover .place{
-    margin:clamp(16px,3.4vw,22px) 0 0;
-    font-size:.9rem;
-    letter-spacing:.03em;
-    color:var(--body);
-    line-height:1.85;
-  }
 
   /* ---------- 공통 섹션 ---------- */
   .sec{
@@ -272,13 +265,12 @@
     from{opacity:0;transform:translateY(7px)}
     to{opacity:1;transform:none}
   }
-  .cover .date,.cover .names,.cover .place{animation:settle .42s cubic-bezier(.16,1,.3,1) both}
+  .cover .date,.cover .names{animation:settle .42s cubic-bezier(.16,1,.3,1) both}
   .cover .names{animation-delay:.05s}
-  .cover .place{animation-delay:.1s}
 
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
-    .cover .date,.cover .names,.cover .place{animation:none;opacity:1;transform:none}
+    .cover .date,.cover .names{animation:none;opacity:1;transform:none}
   }
 
   /* ---------- 데스크톱 ---------- */
