@@ -506,7 +506,7 @@
       var isAndroid = /Android/i.test(ua);
       var left = false;
 
-      function goWeb(){ if (!left){ left = true; location.href = WEB_MAP; } }
+      function goWeb(){ if (!left){ left = true; window.open(NAVER_WEB, "_blank", "noopener"); } }
 
       if (!isIOS && !isAndroid){ goWeb(); return; }
 
