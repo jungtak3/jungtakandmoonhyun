@@ -188,7 +188,7 @@
   .mapwrap{margin:clamp(18px,3.4vw,22px) 0 0}
   .gmap{
     display:block;width:100%;border:0;
-    height:clamp(230px,48vw,290px);
+    height:clamp(300px,72vw,340px);
     background:#f2ece6;
     border-radius:1px;
   }
@@ -452,7 +452,7 @@
   /* 지도 열기: 설치된 앱이 있으면 앱으로, 없으면 웹 지도로 */
   var VENUE = "메종 드 아나하";
   var LAT = "37.5042815", LNG = "127.0415425";
-  var NAVER_WEB = "https://map.naver.com/p/?lng=" + LNG + "&lat=" + LAT + "&title=" + encodeURIComponent(VENUE);
+  var NAVER_WEB = "https://map.naver.com/p/search/" + encodeURIComponent(VENUE + " 언주로 517");
   var KAKAO_WEB = "https://map.kakao.com/link/map/" + encodeURIComponent(VENUE) + "," + LAT + "," + LNG;
 
   var mapBtn = document.getElementById("open-map");
