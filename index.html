@@ -106,27 +106,28 @@
   }
 
   .ways{
-    margin:clamp(22px,4.5vw,28px) auto 0;
+    margin:clamp(22px,4.5vw,28px) 0 0;
     padding:0;
     list-style:none;
-    max-width:22rem;
-    text-align:left;
   }
   .ways li{
     display:grid;
-    grid-template-columns:3.6rem 1fr;
-    gap:.9rem;
-    padding:.42em 0;
+    grid-template-columns:auto auto;
+    justify-content:center;
+    align-items:baseline;
+    gap:.95em;
+    padding:.5em 0;
     font-size:.85rem;
     line-height:1.8;
     color:var(--body);
+    text-align:left;
   }
   .ways li + li{border-top:1px solid #f4ece8}
   .ways .k{
     font-size:.7rem;
     letter-spacing:.16em;
     color:var(--rose);
-    padding-top:.42em;
+    text-align:right;
   }
 
   /* ---------- actions ---------- */
@@ -203,20 +204,17 @@
 
   /* ---------- one authored moment: the page settles in ---------- */
   @keyframes settle{
-    from{opacity:0;transform:translateY(10px)}
+    from{opacity:0;transform:translateY(7px)}
     to{opacity:1;transform:none}
   }
-  .names,.when,.greeting,.venue,.colophon{
-    animation:settle .62s cubic-bezier(.22,.61,.36,1) both;
+  .names,.when{
+    animation:settle .42s cubic-bezier(.16,1,.3,1) both;
   }
-  .when{animation-delay:.07s}
-  .greeting{animation-delay:.13s}
-  .venue{animation-delay:.19s}
-  .colophon{animation-delay:.25s}
+  .when{animation-delay:.06s}
 
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
-    .names,.when,.greeting,.venue,.colophon{animation:none;opacity:1;transform:none}
+    .names,.when{animation:none;opacity:1;transform:none}
   }
   @media print{
     body{background:#fff}
@@ -239,7 +237,7 @@
   <p class="greeting">
     저희 두 사람이 결혼합니다.<br>
     서로의 계절을 함께 걷겠다는 약속을<br>
-    여러분 앞에서 나누고자 합니다<br>
+    여러분 앞에서 나누고자 합니다.<br><br>
     오셔서 축복해 주시면 감사하겠습니다.
   </p>
 
