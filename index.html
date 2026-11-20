@@ -235,22 +235,6 @@
   .toast.on{opacity:1;translate:-50% -4px}
 
   /* ---------- 절제된 상호작용 ---------- */
-  /* 1. 섹션은 화면에 들어올 때 떠오른다 — JS 없이, 스크롤 타임라인으로.
-        뷰포트 진입 전에는 이미 보이는 상태이므로 스크립트가 없어도 내용이 사라지지 않는다. */
-  @supports (animation-timeline: view()){
-    @media (prefers-reduced-motion: no-preference){
-      .sec{
-        animation:fade-rise linear both;
-        animation-timeline:view();
-        animation-range:entry 0% entry 62%;
-      }
-      @keyframes fade-rise{
-        from{opacity:.55;transform:translateY(18px)}
-        to{opacity:1;transform:none}
-      }
-    }
-  }
-
   /* 2. 커버는 스크롤하면 살짝 물러난다 — 종이를 넘기는 느낌 */
   @supports (animation-timeline: view()){
     @media (prefers-reduced-motion: no-preference){
@@ -267,14 +251,12 @@
 
   /* 3. 예식일은 그 자리에 들어올 때 한 번 숨쉰다 */
   @keyframes mark-bloom{
-    0%  {box-shadow:0 0 0 0 rgba(143,93,106,.45)}
-    70% {box-shadow:0 0 0 9px rgba(143,93,106,0)}
+    0%  {box-shadow:0 0 0 0 rgba(143,93,106,.42)}
+    60% {box-shadow:0 0 0 8px rgba(143,93,106,0)}
     100%{box-shadow:0 0 0 0 rgba(143,93,106,0)}
   }
-  .cal td.mark span{
-    animation:mark-bloom 1.8s ease-out 1;
-    animation-timeline:view();
-    animation-range:entry 20% cover 34%;
+  @media (prefers-reduced-motion: no-preference){
+    .cal td.mark span{animation:mark-bloom 1.7s ease-out .5s 1 both}
   }
 
   /* 4. 지도는 프레임에 들어올 때 확대에서 안정된다 */
