@@ -178,9 +178,47 @@
   .maps a:hover,.links a:hover,.link:hover{color:var(--rose);border-color:var(--rose)}
 
   .links{margin:.2em 0 0;font-size:.85rem;color:#c2b3ad}
+  .strong-link{font-weight:400;color:var(--rose);border-bottom-color:var(--rose)}
   .link{
     font:inherit;background:none;border:0;border-bottom:1px solid #d9cbc5;
     cursor:pointer;padding:0 0 .1em;color:var(--body);
+  }
+
+  /* ---------- 약도 ---------- */
+  .sketch{
+    margin:clamp(18px,3.4vw,22px) 0 0;
+    border:1px solid var(--rule);
+    background:var(--paper);
+  }
+  .sketch svg{display:block;width:100%;height:auto}
+  .sketch figcaption{
+    padding:.6em .8em .75em;
+    border-top:1px solid #f4ece8;
+    font-size:.72rem;line-height:1.75;color:var(--muted);text-align:center;
+  }
+  .sketch figcaption strong{font-weight:400;color:var(--rose)}
+  .road{stroke:#e3d8d2;stroke-width:7;fill:none}
+  .road-thin{stroke:#eee5e0;stroke-width:4;fill:none}
+  .rname{
+    font-family:var(--serif);font-size:8.5px;fill:#a8999e;
+    letter-spacing:.06em;
+  }
+  .walk{
+    stroke:var(--rose);stroke-width:1.6;fill:none;
+    stroke-dasharray:4 3;stroke-linecap:round;
+  }
+  .walk-head{stroke:var(--rose);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .pin-venue{fill:var(--rose);opacity:.18}
+  .pin-venue-core{fill:var(--rose)}
+  .pin-station{fill:#fffdfa;stroke:#8a7a80;stroke-width:1.6}
+  .plabel{
+    font-family:var(--serif);font-size:8.5px;fill:var(--muted);
+    letter-spacing:.04em;
+  }
+  .plabel.strong{fill:var(--plum);font-size:9.5px}
+  .dist{
+    font-family:var(--serif);font-size:8px;fill:var(--rose);
+    letter-spacing:.08em;
   }
 
   .ways{margin:clamp(20px,4vw,26px) 0 0;padding:0;list-style:none;text-align:left}
@@ -336,14 +374,44 @@
       신라스테이 역삼
     </p>
 
+    <figure class="sketch">
+      <svg viewBox="0 0 320 200" role="img" aria-label="메종 드 아나하 약도. 선릉역 6번 출구에서 서쪽으로 도보 13분, 약 620미터.">
+        <!-- roads -->
+        <path class="road" d="M0 58 H320"/>
+        <path class="road" d="M84 0 V200"/>
+        <path class="road-thin" d="M0 152 H320"/>
+        <path class="road-thin" d="M222 58 V200"/>
+
+        <text class="rname" x="90" y="194">언주로</text>
+        <text class="rname" x="228" y="194">선릉로</text>
+
+        <!-- route: station (right / east) to venue (left / west) -->
+        <path class="walk" d="M236 66 V140 H104"/>
+        <path class="walk-head" d="M112 135.6 L104 140 L112 144.4"/>
+
+        <!-- venue -->
+        <circle class="pin-venue" cx="84" cy="140" r="8"/>
+        <circle class="pin-venue-core" cx="84" cy="140" r="2.6"/>
+        <text class="plabel strong" x="52" y="172">메종 드 아나하</text>
+        <text class="plabel" x="62" y="184">신라스테이 B1</text>
+
+        <!-- station -->
+        <circle class="pin-station" cx="236" cy="66" r="6.5"/>
+        <text class="plabel strong" x="248" y="62">선릉역</text>
+        <text class="plabel" x="248" y="74">6번 출구</text>
+
+        <!-- distance, on the horizontal leg, below the road so nothing overlaps -->
+        <text class="dist" x="150" y="132">← 도보 13분 · 620m</text>
+      </svg>
+      <figcaption>선릉역 6번 출구에서 <strong>서쪽</strong>으로 도보 13분 · 약 620m<br>셔틀버스 10분 간격 운행</figcaption>
+    </figure>
+
     <p class="maps">
       <button type="button" class="link" id="addr-copy">주소 복사</button>
       <span aria-hidden="true">·</span>
-      <a href="https://map.kakao.com/?q=%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">카카오맵</a>
+      <button type="button" class="link strong-link" id="open-map">네이버지도로 열기</button>
       <span aria-hidden="true">·</span>
-      <a href="https://map.naver.com/p/search/%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">네이버지도</a>
-      <span aria-hidden="true">·</span>
-      <a href="https://map.kakao.com/link/search/%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98" target="_blank" rel="noopener">길찾기</a>
+      <a href="https://map.kakao.com/link/map/%EB%A9%94%EC%A2%85%EB%93%9C%EC%95%84%EB%82%98%ED%95%98,37.5042815,127.0415425" target="_blank" rel="noopener">카카오맵</a>
     </p>
 
     <ul class="ways">
@@ -412,6 +480,55 @@
     } else {
       legacyCopy(value, done);
     }
+  }
+
+  /* 지도 열기: 설치된 앱이 있으면 앱으로, 없으면 웹 지도로 */
+  var VENUE = "메종 드 아나하";
+  var LAT = "37.5042815", LNG = "127.0415425";
+  var NAVER_WEB = "https://map.naver.com/p/?lng=" + LNG + "&lat=" + LAT + "&title=" + encodeURIComponent(VENUE);
+  var KAKAO_WEB = "https://map.kakao.com/link/map/" + encodeURIComponent(VENUE) + "," + LAT + "," + LNG;
+
+  var mapBtn = document.getElementById("open-map");
+  if (mapBtn){
+    mapBtn.addEventListener("click", function(){
+      var ua = navigator.userAgent;
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var isAndroid = /Android/i.test(ua);
+      var left = false;
+
+      function goWeb(){ if (!left){ left = true; location.href = WEB_MAP; } }
+
+      if (!isIOS && !isAndroid){ goWeb(); return; }
+
+      /* leaving the page = the app took over; staying = fall back to the next target */
+      function onHide(){ if (document.hidden) left = true; }
+      document.addEventListener("visibilitychange", onHide);
+      window.addEventListener("pagehide", onHide);
+
+      function cleanup(){
+        document.removeEventListener("visibilitychange", onHide);
+        window.removeEventListener("pagehide", onHide);
+      }
+
+      /* 네이버지도 app first */
+      var naverApp = "nmap://place?lat=" + LAT + "&lng=" + LNG
+                   + "&name=" + encodeURIComponent(VENUE) + "&appname=jungtakandmoonhyun.com";
+      location.href = naverApp;
+
+      setTimeout(function(){
+        if (left){ cleanup(); return; }
+        /* 네이버 app absent -> try 카카오 app */
+        var kakaoApp = isIOS
+          ? "kakaomap://look?p=" + LAT + "," + LNG
+          : "kakaomap://open?p=" + LAT + "," + LNG + "&n=" + encodeURIComponent(VENUE);
+        location.href = kakaoApp;
+
+        setTimeout(function(){
+          cleanup();
+          if (!left) location.href = NAVER_WEB;
+        }, 750);
+      }, 750);
+    });
   }
 
   /* 주소 복사 */
