@@ -132,7 +132,7 @@
     width:1.95em;height:1.95em;background:var(--rose);border-radius:50%;
     color:var(--paper);
   }
-  .cal .dday{
+  .dday{
     margin:1.15em 0 0;
     padding-top:.95em;
     border-top:1px solid #ece2db;
@@ -314,7 +314,7 @@
     .cal th{font-size:.58rem;padding:.1em 0 .3em}
     .cal td{font-size:.76rem;padding:.16em 0}
     .cal .mo{font-size:.7rem;margin-bottom:.5em}
-    .cal .dday{margin:.7em 0 0;padding-top:.6em;border-top:1px solid #ece2db;font-size:.76rem}
+    .dday{margin:.7em 0 0;padding-top:.6em;border-top:1px solid #ece2db;font-size:.76rem}
     .sec h2{margin-bottom:clamp(14px,1.4vw,18px)}
     .greeting{line-height:2.05}
     .ways{margin-top:1em}
@@ -340,8 +340,10 @@
 }
 
 /* English names are longer and must not split across lines */
-/* The full names must hold one line at 320px: "Jung Tak Joo ♥ Moon Hyun Chang"
-   measures ~17.6em wide, so the size is driven by the viewport, not a fixed ramp. */
+/* The full pair needs ~17.6em, which at 320px caps the names near 15.6px.
+   Korean sets the date ~1.17x the names; an untuned English date would hit 1.6x,
+   so the date comes down with the names and the cover keeps the same hierarchy. */
+[lang="en"] .cover .date{font-size:clamp(1.3rem,5.6vw,1.55rem)}
 [lang="en"] .names{
   font-size:clamp(.9rem,4.72vw,1.2rem);
   line-height:1.5;
