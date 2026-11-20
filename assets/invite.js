@@ -18,14 +18,15 @@
       addrDone:  "Address copied",
       dday:      "{n} days to go",
       ddayToday: "Today",
-      share:     "Joo Jungtak and Jang Moonhyun are getting married. Monday 1 March 2027, 12:30 PM, Maison de Anaha, Seoul.",
-      shareTitle:"Joo Jungtak ♥ Jang Moonhyun"
+      share:     "Jung Tak Joo and Moon Hyun Chang are getting married. Monday 1 March 2027, 12:30 PM, Masion de Anaha, Seoul.",
+      shareTitle:"Jung Tak Joo ♥ Moon Hyun Chang"
     }
   };
   var S = T[LANG] || T.ko;
   var toastEl = document.getElementById("toast");
   var toastTimer;
   function toast(msg){
+    if (!toastEl) return;
     toastEl.textContent = msg;
     toastEl.classList.add("on");
     clearTimeout(toastTimer);
@@ -102,11 +103,14 @@
     });
   }
 
-  /* 주소 복사 */
+  /* 주소 복사 — 영문 페이지에서는 한국어 주소를 함께 넣어 기사에게 보여줄 수 있게 한다 */
+  var ADDRESS = LANG === "en"
+    ? "메종 드 아나하 B1, 서울특별시 강남구 언주로 517\nMasion de Anaha B1, 517 Eonju-ro, Gangnam-gu, Seoul"
+    : "서울특별시 강남구 언주로 517";
   var addrBtn = document.getElementById("addr-copy");
   if (addrBtn){
     addrBtn.addEventListener("click", function(){
-      copyText("서울특별시 강남구 언주로 517", function(){ toast(S.addrDone); });
+      copyText(ADDRESS, function(){ toast(S.addrDone); });
     });
   }
 

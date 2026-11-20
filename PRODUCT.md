@@ -12,7 +12,7 @@ Static HTML/CSS in a single repository, deployed by GitHub Pages at `jungtakandm
 
 ## Users
 
-Wedding guests of Jungtak and Moonhyun, almost all arriving from a KakaoTalk message on a phone. They open the link in the minutes after receiving it, standing or moving, one-handed, often mid-conversation. Many are older relatives unfamiliar with the couple's digital life; some will scan a printed QR code.
+Wedding guests of Jung Tak Joo and Moon Hyun Chang, almost all arriving from a KakaoTalk message on a phone, with a minority of English-speaking guests using the English page. They open the link in the minutes after receiving it, standing or moving, one-handed, often mid-conversation. Many are older relatives unfamiliar with the couple's digital life; some will scan a printed QR code.
 
 Their job: confirm the date and place, believe it is the right wedding, feel invited, and know exactly how to get there. A minority need to reply with attendance, send a gift, or find parking.
 
@@ -29,7 +29,7 @@ The invitation is the artifact, not a page about an event. It is authored by the
 - Delivered as a link in KakaoTalk; the KakaoTalk in-app browser is the primary rendering environment, not mobile Safari or Chrome.
 - The printed QR code (`assets/qr_heart.png`, 2048×2048, decodes to `https://jungtakandmoonhyun.com`) points back to this page.
 - Ceremony date and time: **2027-03-01 (Monday), 12:30** — confirmed by the couple and printed on the page.
-- Venue: Maison de Anaha (메종 드 아나하), 서울특별시 강남구 언주로 517 B1 (신라스테이 역삼), 02-554-6000 — confirmed by the couple, address and phone verified against the venue's own site.
+- Venue: Masion de Anaha (메종 드 아나하), 서울특별시 강남구 언주로 517 B1 (신라스테이 역삼), 02-554-6000 — confirmed by the couple, address and phone verified against the venue's own site.
 - Access facts from the venue: 선릉역 6번 출구 with a shuttle every 10 minutes; buses 141/242/361/6411 at KT강남지사; parking 신라스테이 B2–B5, 2 hours free, expected to be congested.
 - Walking route measured with OSRM: **811m, ~11 min** via 선릉로93길 → 언주로98길 → 언주로. The venue's own site says 13 min, which assumes a slower pace; the page prints 11분 · 811m.
 - The map is a Google Maps place embed (keyless `output=embed`), with 도보/차량 길찾기 links that carry no origin, so Google starts from the guest's own location.
@@ -57,7 +57,7 @@ Constraints:
 
 ## Brand Commitments
 
-- Names: 주정탁 and 장문현. The page and the closing signature use the monogram **`JT ♥ MH`**; romanisation (Joo Jungtak / Jang Moonhyun) is secondary and appears only where Latin is required, not on the page.
+- Names: 주정탁 and 장문현. The page and the closing signature use the monogram **`JT ♥ MH`**; romanisation (Jung Tak Joo / Moon Hyun Chang) is secondary and appears only where Latin is required, not on the page.
 - Palette in use: cream ground `#fdfaf6`, plum `#3a2630`, body `#5c4a53`, muted `#6b5a62`, rose `#8f5d6a` (AA-safe; the earlier `#b07c88` failed at 3.3:1).
 - Type in use: **LINE Seed Sans KR** (Regular 400 / Bold 700), self-hosted as a woff2 subset.
 - The heart-shaped QR is a real, working asset and is part of the identity; the couple asked for it in the first place. It is **not referenced by the current page** — it exists for print.
