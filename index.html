@@ -171,7 +171,7 @@
   .colophon .mark{
     margin:0;
     font-size:.7rem;
-    letter-spacing:.34em;
+    letter-spacing:.3em;
     color:var(--muted);
     text-transform:uppercase;
   }
@@ -219,11 +219,13 @@
   /* ---------- desktop: one sheet, two columns ---------- */
   @media (min-width:960px){
     html{height:100%}
+    /* a sheet taller than the window scrolls from its top, never clipped by centring */
     body{
       min-height:100dvh;
       display:flex;
       align-items:center;
-      justify-content:center;
+      align-items:safe center;
+      justify-content:safe center;
       padding:clamp(30px,4vw,60px);
       background:#f4eee7;
     }
@@ -245,10 +247,9 @@
     .head{grid-column:1;grid-row:1}
     .details{
       grid-column:2;grid-row:1;
-      padding-left:clamp(40px,4.6vw,66px);
       align-self:center;
     }
-    .colophon{grid-column:1 / -1;grid-row:2;margin-top:clamp(34px,3.4vw,46px);text-align:center}
+    .colophon{grid-column:1 / -1;grid-row:2;margin-top:clamp(30px,3vw,40px);padding-top:1.4em;text-align:left}
 
     .page{text-align:left}
     .names{font-size:2.6rem;line-height:1.28}
@@ -259,8 +260,8 @@
     .venue .name{font-size:1.18rem}
     .venue .addr{margin-top:.5em}
     .ways{margin-top:1.4em}
-    .ways li{grid-template-columns:3em 1fr;justify-content:start;gap:.8em;font-size:.875rem;text-wrap:pretty}
-    .ways .k{text-align:left}
+    .ways li{grid-template-columns:3.4em 1fr;justify-content:start;align-items:start;gap:.85em;font-size:.9rem;line-height:1.85;text-wrap:pretty}
+    .ways .k{text-align:left;padding-top:.25em}
     .actions{margin-top:1.6em;grid-template-columns:1fr 1fr;gap:.5rem}
     .actions .btn--primary{grid-column:1 / -1}
     .btn{font-size:.85rem;min-height:2.8rem}
