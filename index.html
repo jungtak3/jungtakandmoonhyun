@@ -199,6 +199,14 @@
   .sketch figcaption strong{font-weight:400;color:var(--rose)}
   .road{stroke:#e3d8d2;stroke-width:7;fill:none}
   .road-thin{stroke:#eee5e0;stroke-width:4;fill:none}
+  /* the sketch's labels sit near linework; a cream halo keeps every one readable */
+  .sketch text{
+    paint-order:stroke;
+    stroke:#faf5f0;
+    stroke-width:3px;
+    stroke-linejoin:round;
+    stroke-linecap:round;
+  }
   .rname{
     font-family:var(--sans);font-size:9px;fill:#8d7d83;
     letter-spacing:.06em;
@@ -395,7 +403,7 @@
         <!-- 예식장 -->
         <circle class="pin-venue" cx="74" cy="118" r="7.5"/>
         <circle class="pin-venue-core" cx="74" cy="118" r="2.4"/>
-        <text class="plabel strong" x="30" y="76">메종 드 아나하</text>
+        <text class="plabel strong" x="26" y="108">메종 드 아나하</text>
 
         <!-- 선릉역 -->
         <circle class="pin-station" cx="240" cy="52" r="6"/>
