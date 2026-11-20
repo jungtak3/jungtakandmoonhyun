@@ -14,11 +14,6 @@
     src:url("assets/fonts/GowunBatang-Regular.woff2") format("woff2");
     font-weight:400; font-style:normal; font-display:swap;
   }
-  @font-face{
-    font-family:"Gowun Batang";
-    src:url("assets/fonts/GowunBatang-Bold.woff2") format("woff2");
-    font-weight:700; font-style:normal; font-display:swap;
-  }
 
   :root{
     --plum:#221a1e;
@@ -63,11 +58,11 @@
     width:min(100%,calc(var(--sheet-max) + 2 * var(--edge) + 2px));
     max-width:var(--sheet-max);
     margin:0 auto;
-    color:#4a3a40;
+    color:#6d5760;
   }
   .flap line,.flap path{vector-effect:non-scaling-stroke}
   .flap .crease{stroke:currentColor;stroke-width:1}
-  .flap .seam{stroke:#3b2e34;stroke-width:1;stroke-dasharray:1 6}
+  .flap .seam{stroke:#54424a;stroke-width:1;stroke-dasharray:1 6}
 
   /* ---------- the sheet that rose out of it ---------- */
   .sheet{
@@ -288,7 +283,7 @@
         <h2 id="share-h">전하기</h2>
         <div>
           <div class="share-row">
-            <button class="ghost" type="button" id="share-kakao">카카오톡으로 공유</button>
+            <button class="ghost" type="button" id="share-native">공유하기</button>
             <button class="ghost" type="button" id="share-copy">링크 복사</button>
           </div>
         </div>
@@ -327,56 +322,18 @@
       var el = document.getElementById(btn.dataset.scroll);
       if (!el) return;
       el.scrollIntoView({behavior:"smooth", block:"start"});
-      var first = el.querySelector("input[type=radio], input, textarea, button");
-      if (first) setTimeout(function(){ first.focus({preventScroll:true}); }, 420);
+      el.setAttribute("tabindex","-1");
+      setTimeout(function(){ el.focus({preventScroll:true}); }, 420);
     });
   });
-
-  // copy buttons
-  document.querySelectorAll(".copy").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var value = btn.dataset.copy;
-      var done = function(){
-        btn.dataset.done = "1";
-        btn.textContent = "복사됨";
-        toast("계좌번호를 복사했습니다");
-        setTimeout(function(){
-          delete btn.dataset.done;
-          btn.textContent = "복사";
-        }, 1900);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(value).then(done).catch(function(){ legacyCopy(value, done); });
-      } else {
-        legacyCopy(value, done);
-      }
-    });
-  });
-  function legacyCopy(value, done){
-    var ta = document.createElement("textarea");
-    ta.value = value;
-    ta.setAttribute("readonly","");
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); done(); } catch(e){ toast("복사하지 못했습니다"); }
-    document.body.removeChild(ta);
-  }
 
   // share
   var shareText = "정탁 ♥ 문현의 결혼식에 초대합니다. 2027년 3월 1일 월요일 12:30, 메종 드 아나하.";
   var shareUrl = location.href.split("#")[0];
 
   function kakaoShare(){
-    if (window.Kakao && window.Kakao.isInitialized && window.Kakao.isInitialized()){
-      window.Kakao.Share.sendDefault({
-        objectType:"text",
-        text: shareText,
-        link:{ mobileWebUrl: shareUrl, webUrl: shareUrl }
-      });
-      return;
-    }
+    // No Kakao JS SDK is loaded (it needs a JS key the couple must supply),
+    // so this is the device share sheet, with copy as the fallback.
     if (navigator.share){
       navigator.share({title:"정탁 ♥ 문현", text:shareText, url:shareUrl}).catch(function(){});
       return;
@@ -391,7 +348,20 @@
       legacyCopy(shareUrl, function(){ toast("링크를 복사했습니다"); });
     }
   }
-  var kk = document.getElementById("share-kakao");
+  function legacyCopy(value, done){
+    var ta = document.createElement("textarea");
+    ta.value = value;
+    ta.setAttribute("readonly","");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(e){ toast("복사하지 못했습니다"); }
+    document.body.removeChild(ta);
+  }
+
+  var kk = document.getElementById("share-native");
   var cp = document.getElementById("share-copy");
   if (kk) kk.addEventListener("click", kakaoShare);
   if (cp) cp.addEventListener("click", copyLink);
