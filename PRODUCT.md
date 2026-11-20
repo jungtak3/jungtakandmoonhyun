@@ -28,42 +28,47 @@ The invitation is the artifact, not a page about an event. It is authored by the
 
 - Delivered as a link in KakaoTalk; the KakaoTalk in-app browser is the primary rendering environment, not mobile Safari or Chrome.
 - The printed QR code (`assets/qr_heart.png`, 2048×2048, decodes to `https://jungtakandmoonhyun.com`) points back to this page.
-- Ceremony date: **2027-03-01 (Monday)** — confirmed by the couple. The time of day is **undecided**; the repository's earlier draft carried a placeholder `PM 12:00` that was never confirmed.
+- Ceremony date and time: **2027-03-01 (Monday), 12:30** — confirmed by the couple and printed on the page.
 - Venue: Maison de Anaha (메종 드 아나하), 서울특별시 강남구 언주로 517 B1 (신라스테이 역삼), 02-554-6000 — confirmed by the couple, address and phone verified against the venue's own site.
-- Access facts from the venue: 선릉역 6번 출구 도보 13분 with a shuttle every 10 minutes; buses 141/242/361/6411 at KT강남지사; parking 신라스테이 B2–B5, 2 hours free, expected to be congested.
+- Access facts from the venue: 선릉역 6번 출구 with a shuttle every 10 minutes; buses 141/242/361/6411 at KT강남지사; parking 신라스테이 B2–B5, 2 hours free, expected to be congested.
+- Walking route measured with OSRM: **811m, ~11 min** via 선릉로93길 → 언주로98길 → 언주로. The venue's own site says 13 min, which assumes a slower pace; the page prints 11분 · 811m.
+- The map is a Google Maps place embed (keyless `output=embed`), with 도보/차량 길찾기 links that carry no origin, so Google starts from the guest's own location.
 - The site is `noindex,nofollow` and stays that way; it is shared by link only.
 
 ## Capabilities and Constraints
 
 Confirmed for the real invitation (requested by the couple):
 
-- Ceremony date, time, and venue with directions.
-- RSVP (attendance reply).
-- Gift account details with copy-to-clipboard.
-- Photo gallery.
-- Transport and parking detail.
-- KakaoTalk share.
+- Ceremony date, time, and venue with directions. **Built.**
+- Transport and parking detail. **Built.**
+- Google Map embed with 도보/차량 길찾기. **Built.**
+- KakaoTalk share and link copy. **Built.**
+- RSVP (attendance reply) — requested, **not built**: needs a receiving phone number, KakaoTalk channel, or Google Form URL. The couple answered "kakao"; only the link is missing.
+- Gift account details with copy-to-clipboard — requested, **not built**: needs real bank, account number, and holder.
+- Photo gallery — requested, **not built**: no photographs exist yet.
+- 혼주 (parents' names) — the Korean convention, **not built**: needs four names.
 
 Constraints:
 
 - No server and no build step: anything interactive must run client-side or use a third-party endpoint the couple operates.
-- RSVP and guestbook imply stored data; the storage mechanism is **undecided** and must be chosen with the couple before those features are built. Do not invent a backend.
+- No backend exists and none will be added. RSVP is a handoff: the guest's own messaging app or a third-party form the couple operates. Never a localStorage write, and never a button that claims to have sent something.
 - Guest names, photos, personal accounts, and phone numbers are real personal data; nothing may be fabricated to fill a layout.
-- Korean is the primary language; the couple's names appear as 정탁 and 문현, romanised as JUNGTAK and MOONHYUN.
+- Korean is the primary language; the couple's names appear as **주정탁** and **장문현**, romanised as **Joo Jungtak** and **Jang Moonhyun**.
 
 ## Brand Commitments
 
-- Names: 정탁 (Jungtak) and 문현 (Moonhyun). Monogram form `JT ♥ MH` is established and used by the couple.
-- Palette in use: cream ground `#fdfaf6`, plum `#3a2630`, rose `#b07c88`.
-- Type in use: Nanum Myeongjo / Noto Serif KR with a serif fallback.
-- The heart-shaped QR is a real, working asset and is part of the identity; the couple asked for it in the first place.
+- Names: 주정탁 (Joo Jungtak) and 장문현 (Jang Moonhyun). Monogram form `JT ♥ MH` is established and used by the couple.
+- Palette in use: cream ground `#fdfaf6`, plum `#3a2630`, body `#5c4a53`, muted `#6b5a62`, rose `#8f5d6a` (AA-safe; the earlier `#b07c88` failed at 3.3:1).
+- Type in use: **LINE Seed Sans KR** (Regular 400 / Bold 700), self-hosted as a woff2 subset.
+- The heart-shaped QR is a real, working asset and is part of the identity; the couple asked for it in the first place. It is **not referenced by the current page** — it exists for print.
 - Voice: quiet, warm, first-person plural. Korean honorific register toward guests. No exclamation-mark hype, no marketing tone.
 
 ## Evidence on Hand
 
 - `assets/qr_heart.png` — 2048×2048 heart-shaped QR, verified to decode to the site URL.
 - Venue facts verified against the venue's own site (maisondeanaha.co.kr) on 2026-11-20.
-- Absent and not to be invented: photographs of the couple, guest names, bank account numbers, RSVP addresses, the couple's personal contact details, the officiant, and the exact ceremony hall within the venue.
+- Absent and not to be invented: photographs of the couple, guest names, bank account numbers, the parents' names (혼주), the RSVP destination, the couple's personal contact details, the officiant, and the exact ceremony hall within the venue.
+- Reference research: `REFERENCE-KR.md` — 600+ catalog listings reviewed, 8 invitation pages read in full.
 
 ## Product Principles
 
