@@ -93,6 +93,7 @@
   .hosts p + p{margin-top:.5em}
   .hosts .who{color:var(--body)}
   .hosts .child{color:var(--plum);letter-spacing:.04em}
+  .hosts .keep{white-space:nowrap}
 
   .greeting{
     margin:0;
