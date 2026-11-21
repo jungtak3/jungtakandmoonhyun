@@ -57,10 +57,54 @@
   /* 지도 열기: 설치된 앱이 있으면 앱으로, 없으면 웹 지도로 */
   var VENUE = "메종 드 아나하";
   var LAT = "37.5042815", LNG = "127.0415425";
+  var KAKAO_WEB = "https://map.kakao.com/link/map/" + encodeURIComponent(VENUE) + "," + LAT + "," + LNG;
   /* 검색어 형태만 장소를 찾아낸다. 데스크톱은 정식 페이지, 모바일은 모바일 검색. */
   var NAVER_Q = encodeURIComponent(VENUE + " 언주로 517");
   var NAVER_WEB_M = "https://m.map.naver.com/search2/search.naver?query=" + NAVER_Q;
   var NAVER_WEB_D = "https://map.naver.com/p/search/" + NAVER_Q;
+
+  function openApp(opts){
+    var ua = navigator.userAgent;
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+    var isAndroid = /Android/i.test(ua);
+    var isMobile = isIOS || isAndroid;
+    var left = false;
+
+    function cleanup(){
+      document.removeEventListener("visibilitychange", onHide);
+      window.removeEventListener("pagehide", onHide);
+    }
+    function onHide(){ if (document.hidden) left = true; }
+
+    if (!isMobile){ opts.web(); return; }
+
+    document.addEventListener("visibilitychange", onHide);
+    window.addEventListener("pagehide", onHide);
+
+    location.href = opts.app(isIOS);
+
+    setTimeout(function(){
+      cleanup();
+      if (!left) opts.web();
+    }, 900);
+  }
+
+  var kakaoBtn = document.getElementById("open-kakao");
+  if (kakaoBtn){
+    kakaoBtn.addEventListener("click", function(){
+      openApp({
+        /* kakaomap://look 은 iOS, open 은 Android */
+        app: function(isIOS){
+          return isIOS
+            ? "kakaomap://look?p=" + LAT + "," + LNG
+            : "kakaomap://open?p=" + LAT + "," + LNG + "&n=" + encodeURIComponent(VENUE);
+        },
+        web: function(){
+          window.open(KAKAO_WEB, "_blank", "noopener");
+        }
+      });
+    });
+  }
 
   var mapBtn = document.getElementById("open-map");
   if (mapBtn){
