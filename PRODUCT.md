@@ -46,7 +46,7 @@ Confirmed for the real invitation (requested by the couple):
 - RSVP (attendance reply) — requested, **not built**: needs a receiving phone number, KakaoTalk channel, or Google Form URL. The couple answered "kakao"; only the link is missing.
 - Gift account details with copy-to-clipboard — requested, **not built**: needs real bank, account number, and holder.
 - Photo gallery — requested, **not built**: no photographs exist yet.
-- 혼주 (parents' names) — the Korean convention, **not built**: needs four names.
+- 혼주 (parents' names). **Built**: 주현찬 · 박성남의 아들 주정탁, 장종성 · 정은영의 딸 장문현.
 
 Constraints:
 
@@ -66,8 +66,9 @@ Constraints:
 ## Evidence on Hand
 
 - `assets/qr_heart.png` — 2048×2048 heart-shaped QR, verified to decode to the site URL.
+- Parents: 주현찬 · 박성남 (groom's), 장종성 · 정은영 (bride's).
 - Venue facts verified against the venue's own site (maisondeanaha.co.kr) on 2026-11-20.
-- Absent and not to be invented: photographs of the couple, guest names, bank account numbers, the parents' names (혼주), the RSVP destination, the couple's personal contact details, the officiant, and the exact ceremony hall within the venue.
+- Absent and not to be invented: photographs of the couple, guest names, bank account numbers, the RSVP destination, the couple's personal contact details, the officiant, and the exact ceremony hall within the venue.
 - Reference research: `REFERENCE-KR.md` — 600+ catalog listings reviewed, 8 invitation pages read in full.
 
 ## Product Principles

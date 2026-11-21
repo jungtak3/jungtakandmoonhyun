@@ -82,6 +82,18 @@
     color:var(--rose);
   }
 
+  /* ---------- 혼주 ---------- */
+  .hosts{
+    margin:clamp(22px,4.4vw,28px) 0 0;
+    font-size:.85rem;
+    line-height:1.95;
+    color:var(--muted);
+  }
+  .hosts p{margin:0}
+  .hosts p + p{margin-top:.5em}
+  .hosts .who{color:var(--body)}
+  .hosts .child{color:var(--plum);letter-spacing:.04em}
+
   .greeting{
     margin:0;
     font-size:.95rem;
@@ -301,14 +313,38 @@
     .sec{margin-top:clamp(10px,1vw,14px);padding-top:clamp(9px,.9vw,12px)}
     .cover .date{font-size:1.66rem}
     .names{font-size:1.5rem;margin-top:.75em}
-    .greeting{text-align:left}
+    /* ---------- 혼주 ---------- */
+  .hosts{
+    margin:clamp(22px,4.4vw,28px) 0 0;
+    font-size:.85rem;
+    line-height:1.95;
+    color:var(--muted);
+  }
+  .hosts p{margin:0}
+  .hosts p + p{margin-top:.5em}
+  .hosts .who{color:var(--body)}
+  .hosts .child{color:var(--plum);letter-spacing:.04em}
+
+  .greeting{text-align:left}
     .cal{padding:.8em .7em .7em;background:#faf5f0}
     .cal th{font-size:.58rem;padding:.1em 0 .3em}
     .cal td{font-size:.76rem;padding:.16em 0}
     .cal .mo{font-size:.7rem;margin-bottom:.5em}
     .dday{margin:.7em 0 0;padding-top:.6em;border-top:1px solid #ece2db;font-size:.76rem}
     .sec h2{margin-bottom:clamp(14px,1.4vw,18px)}
-    .greeting{line-height:2.05}
+    /* ---------- 혼주 ---------- */
+  .hosts{
+    margin:clamp(22px,4.4vw,28px) 0 0;
+    font-size:.85rem;
+    line-height:1.95;
+    color:var(--muted);
+  }
+  .hosts p{margin:0}
+  .hosts p + p{margin-top:.5em}
+  .hosts .who{color:var(--body)}
+  .hosts .child{color:var(--plum);letter-spacing:.04em}
+
+  .greeting{line-height:2.05}
     .ways{margin-top:1em}
     .ways li{padding:.38em 0}
     .maps{grid-template-columns:repeat(3,1fr)}
