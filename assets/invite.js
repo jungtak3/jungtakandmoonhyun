@@ -76,7 +76,7 @@
     }
     function onHide(){ if (document.hidden) left = true; }
 
-    if (!isMobile){ opts.web(); return; }
+    if (!isMobile){ opts.web(isMobile); return; }
 
     document.addEventListener("visibilitychange", onHide);
     window.addEventListener("pagehide", onHide);
@@ -85,7 +85,7 @@
 
     setTimeout(function(){
       cleanup();
-      if (!left) opts.web();
+      if (!left) opts.web(isMobile);
     }, 900);
   }
 
@@ -106,43 +106,21 @@
     });
   }
 
-  var mapBtn = document.getElementById("open-map");
-  if (mapBtn){
-    mapBtn.addEventListener("click", function(){
-      var ua = navigator.userAgent;
-      var isIOS = /iPhone|iPad|iPod/i.test(ua);
-      var isAndroid = /Android/i.test(ua);
-      var isMobile = isIOS || isAndroid;
-      var left = false;
-
-      function goWeb(){ if (!left){ left = true; window.open(isMobile ? NAVER_WEB_M : NAVER_WEB_D, "_blank", "noopener"); } }
-
-      if (!isMobile){ goWeb(); return; }
-
-      /* leaving the page = the app took over; staying = fall back to the next target */
-      function onHide(){ if (document.hidden) left = true; }
-      document.addEventListener("visibilitychange", onHide);
-      window.addEventListener("pagehide", onHide);
-
-      function cleanup(){
-        document.removeEventListener("visibilitychange", onHide);
-        window.removeEventListener("pagehide", onHide);
+var mapBtn = document.getElementById("open-map");
+if (mapBtn){
+  mapBtn.addEventListener("click", function(){
+    openApp({
+      /* nmap://place needs a place id we do not have; search by name */
+      app: function(){
+        return "nmap://search?query=" + encodeURIComponent(VENUE)
+             + "&appname=jungtakandmoonhyun.com";
+      },
+      web: function(isMobile){
+        window.open(isMobile ? NAVER_WEB_M : NAVER_WEB_D, "_blank", "noopener");
       }
-
-      /* 네이버지도 앱을 시도하고, 없으면 네이버 웹으로 간다.
-         카카오로 넘기지 않는다 — 버튼 라벨이 네이버인데 카카오가 열리면
-         하객은 잘못 눌렀다고 생각한다. 카카오는 옆 링크로 따로 있다. */
-      /* nmap://place 는 place id 를 요구한다. 좌표+이름은 search 로 넘긴다. */
-      var naverApp = "nmap://search?query=" + encodeURIComponent(VENUE)
-                   + "&appname=jungtakandmoonhyun.com";
-      location.href = naverApp;
-
-      setTimeout(function(){
-        cleanup();
-        if (!left) location.href = NAVER_WEB_M;
-      }, 900);
     });
-  }
+  });
+}
 
   /* 주소 복사 — 영문 페이지에서는 한국어 주소를 함께 넣어 기사에게 보여줄 수 있게 한다 */
   var ADDRESS = LANG === "en"
